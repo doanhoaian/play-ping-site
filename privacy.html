@@ -7,13 +7,14 @@
 
     <title>Chính sách Quyền riêng tư</title>
     <meta name="description"
-        content="Chính sách quyền riêng tư của PlayPing: không thu thập dữ liệu cá nhân; mô phỏng lưu lượng chạy cục bộ qua VPN trên thiết bị." />
+        content="PlayPing không thu thập dữ liệu cá nhân. Mô phỏng sự cố mạng (mất gói, độ trễ, băng thông, ngắt kết nối) chạy cục bộ trên thiết bị qua Android VpnService; có thể định tuyến tạm thời qua máy chủ trung gian nhưng không ghi log." />
 
     <link rel="canonical" href="https://playping.dihaver.tech/privacy.html" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://playping.dihaver.tech/privacy.html" />
     <meta property="og:title" content="Privacy Policy – PlayPing" />
-    <meta property="og:description" content="Không thu thập dữ liệu cá nhân. Mô phỏng mạng chạy cục bộ qua VPN." />
+    <meta property="og:description"
+        content="Không thu thập dữ liệu cá nhân. Mô phỏng mạng chạy cục bộ qua Android VpnService; có thể định tuyến tạm thời qua máy chủ trung gian nhưng không ghi log." />
     <meta property="og:image" content="https://playping.dihaver.tech/images/og-cover.png" />
     <meta name="twitter:card" content="summary_large_image" />
 
@@ -56,25 +57,79 @@
         <p class="opacity-70 mt-3">Cập nhật lần cuối: <time datetime="2025-09-10">10/09/2025</time></p>
 
         <section class="prose prose-invert max-w-none mt-8">
-            <p><strong>PlayPing</strong> không thu thập, lưu trữ hay chia sẻ dữ liệu cá nhân. Mọi mô phỏng lưu lượng
-                mạng được thực hiện <em>cục bộ</em> trên thiết bị thông qua VPN để phục vụ kiểm thử.</p>
+            <h2>1. Giới thiệu</h2>
+            <p>
+                Ứng dụng <strong>PlayPing</strong> được phát triển nhằm mục đích mô phỏng các sự cố mạng
+                (như mất gói tin, tăng độ trễ, giới hạn băng thông hoặc ngắt kết nối) phục vụ kiểm thử và huấn luyện
+                trong môi trường an toàn trực tiếp trên thiết bị của người dùng.
+                Chúng tôi cam kết tôn trọng quyền riêng tư, bảo mật dữ liệu và minh bạch trong cách thức ứng dụng hoạt
+                động.
+            </p>
 
-            <h2>Dữ liệu chúng tôi xử lý</h2>
+            <h2>2. Thu thập và xử lý dữ liệu</h2>
+            <p><strong>PlayPing không thu thập, lưu trữ hay chia sẻ dữ liệu cá nhân.</strong></p>
+            <p>Ứng dụng không yêu cầu người dùng tạo tài khoản, không ghi nhật ký hoạt động trực tuyến,
+                không theo dõi hành vi và không truyền dữ liệu cá nhân ra ngoài thiết bị.</p>
+            <p>Ngoại lệ duy nhất là trường hợp định tuyến tạm thời qua máy chủ trung gian (xem mục 9).</p>
+
+            <h2>3. Sử dụng VPN để mô phỏng</h2>
+            <p>
+                PlayPing khai thác dịch vụ VPN tích hợp sẵn trong hệ điều hành Android (<code>VpnService</code>)
+                để tạo kết nối mô phỏng và áp dụng các điều kiện mạng giả lập.
+            </p>
             <ul>
-                <li><strong>Lưu lượng mô phỏng</strong>: áp dụng các thông số như delay, jitter, mất gói, giới hạn băng
-                    thông hoặc ngắt kết nối. Tất cả chỉ diễn ra trên thiết bị.</li>
-                <li><strong>Nhật ký cục bộ</strong> (tùy chọn): nếu bạn bật, log chỉ lưu trên máy của bạn và có thể xóa
-                    bất kỳ lúc nào.</li>
+                <li>Kết nối VPN này chỉ phục vụ mục đích mô phỏng.</li>
+                <li>Ứng dụng không giám sát hoạt động duyệt web và không thu thập nội dung lưu lượng.</li>
+                <li>Toàn bộ xử lý được thực hiện cục bộ trên thiết bị, đảm bảo tính riêng tư và độ chính xác.</li>
             </ul>
 
-            <h2>Chia sẻ dữ liệu</h2>
-            <p>Chúng tôi <strong>không</strong> chia sẻ dữ liệu với bên thứ ba.</p>
+            <h2>4. Quyền và quyền truy cập</h2>
+            <p>Ứng dụng chỉ yêu cầu:</p>
+            <ul>
+                <li><strong>Quyền VPN (VpnService)</strong>: cần thiết để khởi tạo và duy trì các phiên mô phỏng mạng.
+                </li>
+            </ul>
+            <p>Ngoài ra, PlayPing không yêu cầu bất kỳ quyền mở rộng nào khác có thể liên quan đến dữ liệu cá nhân của
+                người dùng.</p>
 
-            <h2>Bảo mật</h2>
-            <p>VPN dùng cho mô phỏng chỉ hoạt động cục bộ, không chuyển hướng lưu lượng ra ngoài.</p>
+            <h2>5. Chia sẻ với bên thứ ba</h2>
+            <p>PlayPing không chia sẻ dữ liệu với bất kỳ bên thứ ba nào. Ứng dụng không tích hợp dịch vụ quảng cáo
+                hoặc công cụ phân tích hành vi người dùng.</p>
 
-            <h2>Liên hệ</h2>
-            <p>Email: <a href="mailto:dihaver.studio@gmail.com">dihaver.studio@gmail.com</a></p>
+            <h2>6. Bảo mật</h2>
+            <p>Do không thu thập dữ liệu cá nhân và xử lý chủ yếu trên thiết bị, nguy cơ rò rỉ dữ liệu từ phía chúng tôi
+                là tối thiểu.
+                Người dùng vẫn nên thường xuyên cập nhật hệ điều hành và ứng dụng lên phiên bản mới nhất để duy trì mức
+                bảo mật cao nhất.</p>
+
+            <h2>7. Quyền riêng tư của trẻ em</h2>
+            <p>Ứng dụng không dành cho trẻ em dưới 13 tuổi và không chủ động thu thập dữ liệu từ nhóm người dùng này.
+            </p>
+
+            <h2>8. Tuân thủ chính sách Google Play</h2>
+            <p>PlayPing tuân thủ đầy đủ các chính sách của Google Play, bao gồm các yêu cầu về quyền truy cập và minh
+                bạch dữ liệu.
+                Nếu có thay đổi về tính năng hoặc chính sách, chúng tôi sẽ thông báo bằng cách cập nhật tại trang này
+                kèm ngày hiệu lực rõ ràng.</p>
+
+            <h2>9. Máy chủ trung gian</h2>
+            <p>
+                Trong một số trường hợp, khi VPN đã được kích hoạt nhưng chưa áp dụng mô phỏng,
+                lưu lượng Internet có thể được định tuyến tạm thời qua máy chủ trung gian để tránh gián đoạn kết nối.
+                Chúng tôi cam kết:
+            </p>
+            <ul>
+                <li>Không lưu trữ nội dung lưu lượng truy cập.</li>
+                <li>Không ghi lại nhật ký duyệt web hoặc thông tin nhận dạng cá nhân.</li>
+                <li>Không phân tích hay chia sẻ dữ liệu với bất kỳ bên thứ ba nào.</li>
+                <li>Máy chủ trung gian chỉ đóng vai trò kênh truyền tải, không thực hiện thêm bất kỳ xử lý nào đối với
+                    dữ liệu của người dùng.</li>
+            </ul>
+
+            <h2>10. Liên hệ</h2>
+            <p>Nếu bạn có bất kỳ câu hỏi hoặc thắc mắc nào liên quan đến chính sách quyền riêng tư, vui lòng liên hệ với
+                chúng tôi qua email:</p>
+            <p>📩 <a href="mailto:dihaver.studio@gmail.com">dihaver.studio@gmail.com</a></p>
         </section>
     </main>
 
@@ -91,6 +146,11 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const yEl = document.getElementById('y');
+        if (yEl) yEl.textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
