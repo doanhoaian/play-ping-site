@@ -55,7 +55,7 @@
     <header class="fixed top-0 inset-x-0 z-50">
         <div class="w-full backdrop-blur bg-zinc-950/80 border-b border-zinc-800">
             <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-                <a href="/index.html" class="flex items-center gap-3">
+                <a href="/" class="flex items-center gap-3">
                     <img src="/icons/android-chrome-192x192.png" alt="PlayPing icon"
                         class="w-8 h-8 rounded-xl border border-zinc-800" />
                     <span class="font-semibold tracking-tight text-zinc-100">PlayPing</span>
@@ -81,18 +81,19 @@
                     kết nối – giúp bạn kiểm thử ứng dụng, game và luyện tập trong điều kiện mạng thực tế.</p>
                 <div class="mt-6 flex items-center gap-4">
                     <a href="https://play.google.com/store/apps/details?id=vn.dihaver.playping" target="_blank"
-                        rel="noopener" aria-label="Tải PlayPing trên Google Play">
+                        rel="noopener" class="inline-block hover:opacity-90 active:opacity-80 transition">
                         <img class="h-16" alt="Tải xuống trên Google Play"
                             src="https://play.google.com/intl/vi/badges/static/images/badges/vi_badge_web_generic.png" />
                     </a>
                     <a href="#features"
-                        class="px-5 py-3 rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition">Khám
-                        phá tính năng</a>
+                        class="px-5 py-3 rounded-2xl border border-zinc-800 hover:bg-zinc-900 active:bg-zinc-800 transition">
+                        Khám phá tính năng
+                    </a>
                 </div>
             </div>
             <div class="fade-up md:justify-self-end">
                 <div
-                    class="relative w-[320px] h-[640px] mx-auto my-6 rounded-[3rem] border-[10px] border-black dark:border-zinc-900 bg-black overflow-hidden shadow-soft">
+                    class="relative w-[320px] h-[640px] mx-auto my-6 rounded-[3rem] border-[10px] border-black border-zinc-900 bg-black overflow-hidden shadow-soft">
 
                     <div class="absolute top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-black rounded-full"></div>
 
@@ -113,25 +114,25 @@
                 </p>
             </div>
             <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="fade-up p-6 rounded-3xl border border-zinc-200 dark:border-zinc-800">
+                <div class="fade-up p-6 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition">
                     <h3 class="font-semibold">Bong bóng nổi</h3>
                     <p class="opacity-70 mt-2 text-sm">
                         Điều khiển nhanh mọi chức năng mô phỏng ngay trên màn hình với bong bóng nổi tiện lợi.
                     </p>
                 </div>
-                <div class="fade-up p-6 rounded-3xl border border-zinc-200 dark:border-zinc-800">
+                <div class="fade-up p-6 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition">
                     <h3 class="font-semibold">Mô phỏng thực tế</h3>
                     <p class="opacity-70 mt-2 text-sm">
                         Tái tạo các tình huống mạng thường gặp: lag, giật, mất kết nối để kiểm thử ứng dụng và game.
                     </p>
                 </div>
-                <div class="fade-up p-6 rounded-3xl border border-zinc-200 dark:border-zinc-800">
+                <div class="fade-up p-6 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition">
                     <h3 class="font-semibold">Tùy chỉnh nâng cao</h3>
                     <p class="opacity-70 mt-2 text-sm">
                         Tự do cấu hình delay, jitter, loss, băng thông... phù hợp kịch bản kiểm thử của bạn.
                     </p>
                 </div>
-                <div class="fade-up p-6 rounded-3xl border border-zinc-200 dark:border-zinc-800">
+                <div class="fade-up p-6 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition">
                     <h3 class="font-semibold">An toàn &amp; bảo mật</h3>
                     <p class="opacity-70 mt-2 text-sm">
                         Không thu thập dữ liệu cá nhân. Toàn bộ mô phỏng chạy cục bộ qua VPN an toàn.
@@ -166,7 +167,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 border-t border-zinc-200 dark:border-zinc-800">
+    <footer class="py-10 border-t border-zinc-200 border-zinc-800">
         <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
             <p class="text-sm opacity-70">© <span id="y"></span> Dihaver Tech — PlayPing</p>
             <div class="text-sm opacity-70 flex items-center gap-3">
