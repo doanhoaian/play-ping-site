@@ -193,3 +193,145 @@ body {
 .err-msg.show {
     display: block;
 }
+
+/********************************************************
+ * Phone 3D
+ ********************************************************/
+.stage {
+    width: max-content;
+    margin: 60px auto;
+    perspective: 1200px;
+    perspective-origin: 50% 40%;
+}
+
+.phone3d {
+    --w: 320px;
+    --h: 640px;
+    --d: 44px;
+    --r: 30px;
+    --b: 12px;
+    position: relative;
+    width: var(--w);
+    height: var(--h);
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transform: rotateX(10deg) rotateY(-28deg) rotateZ(1deg);
+    filter: drop-shadow(0 28px 60px rgba(0, 0, 0, .55));
+    isolation: isolate;
+}
+
+.phone3d .face {
+    position: absolute;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.phone3d .front,
+.phone3d .back {
+    top: 0;
+    left: 0;
+    width: var(--w);
+    height: var(--h);
+    border-radius: var(--r);
+    overflow: hidden;
+    background: #0a0a0a;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, .04) inset, 0 0 0 1px rgba(0, 0, 0, .6);
+}
+
+.phone3d .front {
+    transform: translateZ(calc(var(--d) / 2));
+}
+
+.phone3d .back {
+    transform: translateZ(calc(var(--d) / -2)) rotateY(180deg);
+    background: radial-gradient(120% 90% at 30% 20%, #1a1a1a, #0f0f10 60%, #0b0b0c 100%);
+}
+
+.phone3d .screen {
+    position: absolute;
+    top: var(--b);
+    left: var(--b);
+    width: calc(100% - (var(--b) * 2));
+    height: calc(100% - (var(--b) * 2));
+    display: block;
+    object-fit: cover;
+    border-radius: calc(var(--r) - var(--b));
+    outline: none;
+    z-index: 2;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, .06) inset, 0 0 18px rgba(0, 0, 0, .6) inset;
+}
+
+.phone3d .notch {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    transform: translateX(-50%);
+    background: #000;
+    border-radius: 999px;
+    box-shadow: 0 0 0 2px #0a0a0a inset, 0 0 0 1px rgba(255, 255, 255, .04);
+    z-index: 3;
+}
+
+.phone3d .right,
+.phone3d .left {
+    width: var(--d);
+    height: var(--h);
+    backface-visibility: visible;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .65);
+}
+
+.phone3d .top,
+.phone3d .bottom {
+    width: var(--w);
+    height: var(--d);
+    backface-visibility: visible;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .65);
+}
+
+.phone3d .right {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    transform-origin: left center;
+    transform: rotateY(90deg) translateZ(calc(var(--w) / 2));
+    background: linear-gradient(180deg, #0e0e10, #1b1b1e 45%, #0b0b0d 100%);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, .6), 0 0 1px rgba(255, 255, 255, .04);
+}
+
+.phone3d .left {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: auto;
+    transform-origin: right center;
+    transform: rotateY(-90deg) translateZ(calc(var(--w) / 2));
+    background: linear-gradient(180deg, #16161a, #0f0f12 50%, #0a0a0c);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, .6), 0 0 1px rgba(255, 255, 255, .04);
+}
+
+.phone3d .top {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    transform-origin: center bottom;
+    transform: rotateX(90deg) translateZ(calc(var(--h) / 2));
+    background: linear-gradient(90deg, #141417, #1d1d21 60%, #101013);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, .6), 0 0 1px rgba(255, 255, 255, .04);
+}
+
+.phone3d .bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    transform-origin: center top;
+    transform: rotateX(-90deg) translateZ(calc(var(--h) / 2));
+    background: linear-gradient(90deg, #0d0d10, #1a1a1e 50%, #0d0d10);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, .6), 0 0 1px rgba(255, 255, 255, .04);
+}
