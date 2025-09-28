@@ -335,3 +335,110 @@ body {
     background: linear-gradient(90deg, #0d0d10, #1a1a1e 50%, #0d0d10);
     box-shadow: inset 0 0 10px rgba(0, 0, 0, .6), 0 0 1px rgba(255, 255, 255, .04);
 }
+
+.prose p {
+  margin-top: 1.1rem;
+  margin-bottom: 1.1rem;
+  line-height: 1.75;
+}
+
+.prose ul,
+.prose ol {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  padding-left: 1.6rem;
+}
+
+.prose ul li,
+.prose ol li {
+  margin-bottom: 0.7rem;
+}
+
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+.prose ul ul,
+.prose ol ol {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  list-style-type: circle;
+}
+
+.prose code {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.4rem;
+  font-size: 0.95em;
+}
+
+.prose .overflow-x-auto {
+  padding: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  background: rgba(20, 20, 22, 0.6);
+  margin: 1.25rem 0 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+}
+
+.prose table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.prose thead th {
+  text-align: left;
+  font-weight: 600;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f1f5f9;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  white-space: nowrap;
+}
+
+.prose tbody td {
+  padding: 12px 14px;
+  vertical-align: top;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.prose tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.prose table tr:first-child th:first-child,
+.prose table tr:first-child td:first-child {
+  border-top-left-radius: 10px;
+}
+.prose table tr:first-child th:last-child,
+.prose table tr:first-child td:last-child {
+  border-top-right-radius: 10px;
+}
+.prose table tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+.prose table tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+.prose table + * {
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 420px) {
+  .prose table {
+    font-size: 0.9rem;
+  }
+  .prose thead th,
+  .prose tbody td {
+    padding: 10px 12px;
+  }
+}
