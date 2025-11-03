@@ -3,19 +3,67 @@
     <url>
         <loc>https://playping.dihaver.tech/</loc>
         <lastmod>2025-09-10</lastmod>
+        <priority>0.5</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://playping.dihaver.tech/vi/</loc>
+        <lastmod>2025-09-10</lastmod>
         <priority>1.0</priority>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://playping.dihaver.tech/privacy.html</loc>
+        <loc>https://playping.dihaver.tech/en/</loc>
+        <lastmod>2025-09-10</lastmod>
+        <priority>0.9</priority>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>https://playping.dihaver.tech/vi/privacy.html</loc>
         <lastmod>2025-09-10</lastmod>
         <priority>0.5</priority>
         <changefreq>yearly</changefreq>
     </url>
     <url>
-        <loc>https://playping.dihaver.tech/terms.html</loc>
+        <loc>https://playping.dihaver.tech/en/privacy.html</loc>
         <lastmod>2025-09-10</lastmod>
         <priority>0.5</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://playping.dihaver.tech/vi/terms.html</loc>
+        <lastmod>2025-09-10</lastmod>
+        <priority>0.5</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://playping.dihaver.tech/en/terms.html</loc>
+        <lastmod>2025-09-10</lastmod>
+        <priority>0.5</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://playping.dihaver.tech/vi/feedback.html</loc>
+        <lastmod>2025-09-10</lastmod>
+        <priority>0.4</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://playping.dihaver.tech/en/feedback.html</loc>
+        <lastmod>2025-09-10</lastmod>
+        <priority>0.4</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://playping.dihaver.tech/vi/vpn-mode-block.html</loc>
+        <lastmod>2025-09-10</lastmod>
+        <priority>0.3</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://playping.dihaver.tech/en/vpn-mode-block.html</loc>
+        <lastmod>2025-09-10</lastmod>
+        <priority>0.3</priority>
         <changefreq>yearly</changefreq>
     </url>
 </urlset>

@@ -1,5 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
     const SUPPORT_EMAIL = 'dihaver.studio@gmail.com';
+    const i18n = (window.__playPingI18n && window.__playPingI18n.strings) || {};
+    const defaults = {
+        feedbackTypeBug: 'Báo lỗi',
+        feedbackTypeFeature: 'Yêu cầu tính năng',
+        feedbackTypeOther: 'Khác',
+        feedbackSubjectPrefix: 'Phản hồi',
+        feedbackSubjectBug: 'Báo lỗi',
+        feedbackSubjectFeature: 'Yêu cầu tính năng',
+        feedbackSubjectOther: 'Khác',
+        feedbackErrorRequired: 'Trường này là bắt buộc.',
+        feedbackErrorTooShort: min => `Cần ít nhất ${min} ký tự.`,
+        feedbackErrorTooLong: max => `Tối đa ${max} ký tự.`,
+        feedbackErrorInvalid: 'Giá trị không hợp lệ.',
+        feedbackErrorSeverityRequired: 'Vui lòng chọn mức độ lỗi.',
+        feedbackBotDetected: 'Phát hiện bot.',
+        feedbackValidationError: 'Vui lòng kiểm tra lại các trường được đánh dấu.',
+        feedbackSubmitting: 'Đang chuẩn bị email...',
+        feedbackSubmitSuccess: 'Đã mở ứng dụng email của bạn. Vui lòng kiểm tra và nhấn Gửi trong email ✉️',
+        feedbackSubmitFailure: 'Không mở được ứng dụng email. Vui lòng gửi email tới ' + SUPPORT_EMAIL,
+        feedbackSubmitLabel: 'Gửi phản hồi',
+        feedbackTrimmedNote: '(ĐÃ RÚT GỌN)'
+    };
+
+    function tr(key) {
+        const value = i18n[key];
+        if (value !== undefined) return value;
+        return defaults[key];
+    }
+
+    function trf(key, ...args) {
+        const value = tr(key);
+        if (typeof value === 'function') {
+            return value(...args);
+        }
+        return value;
+    }
+
     const form = document.getElementById('fbForm');
     const submitBtn = document.getElementById('submitBtn');
     const statusEl = document.getElementById('status');
@@ -25,10 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     function messageFor(el) {
         const v = el.validity;
-        if (v.valueMissing) return 'Trường này là bắt buộc.';
-        if (v.tooShort) return `Cần ít nhất ${el.minLength} ký tự.`;
-        if (v.tooLong) return `Tối đa ${el.maxLength} ký tự.`;
-        return 'Giá trị không hợp lệ.';
+        if (v.valueMissing) return tr('feedbackErrorRequired');
+        if (v.tooShort) return trf('feedbackErrorTooShort', el.minLength);
+        if (v.tooLong) return trf('feedbackErrorTooLong', el.maxLength);
+        return tr('feedbackErrorInvalid');
     }
     function minFail(el) {
         const min = el.minLength > 0 ? el.minLength : 0;
@@ -67,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         el.addEventListener('change', () => clearError(el));
         el.addEventListener('blur', () => {
             if (el === title || el === desc) {
-                if (minFail(el)) setError(el, `Cần ít nhất ${el.minLength} ký tự.`);
+                if (minFail(el)) setError(el, trf('feedbackErrorTooShort', el.minLength));
                 else clearError(el);
             } else if (!el.checkValidity()) {
                 setError(el, messageFor(el));
@@ -81,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!el) return;
             if (el === title || el === desc) {
                 if (minFail(el)) {
-                    setError(el, `Cần ít nhất ${el.minLength} ký tự.`);
+                    setError(el, trf('feedbackErrorTooShort', el.minLength));
                     ok = false;
                     return;
                 }
@@ -92,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         if (typeEl.value === 'bug' && !sevEl.value) {
-            setError(sevEl, 'Vui lòng chọn mức độ lỗi.');
+            setError(sevEl, tr('feedbackErrorSeverityRequired'));
             ok = false;
         }
         return ok;
@@ -102,17 +139,22 @@ document.addEventListener('DOMContentLoaded', () => {
         return (s || '').toString().replace(/[\r\n]+/g, '\n').trim();
     }
     function buildEmailSubject() {
-        const typeMap = { bug: 'Bug', feature: 'Feature', other: 'Other' };
-        const prefix = typeMap[typeEl.value] || 'Feedback';
+        const prefix = tr('feedbackSubjectPrefix') || defaults.feedbackSubjectPrefix;
+        const typeKey = typeEl.value === 'bug' ? 'feedbackSubjectBug' : typeEl.value === 'feature' ? 'feedbackSubjectFeature' : 'feedbackSubjectOther';
+        const typeLabel = tr(typeKey) || defaults[typeKey] || '';
         const sev = typeEl.value === 'bug' && sevEl.value ? `[${sevEl.options[sevEl.selectedIndex].text}]` : '';
         const ttl = title.value.trim();
-        return `[${prefix}]${sev ? sev : ''} ${ttl}`.slice(0, 200);
+        const parts = [`[${prefix}]`];
+        if (typeLabel) parts.push(`[${typeLabel}]`);
+        if (sev) parts.push(sev);
+        parts.push(ttl);
+        return parts.filter(Boolean).join(' ').trim().slice(0, 200);
     }
     function buildEmailBody() {
         const MAX_DESC = 1500;
         let descText = sanitizeLine(desc.value);
         if (descText.length > MAX_DESC) {
-            descText = descText.slice(0, MAX_DESC) + '\n\n(ĐÃ RÚT GỌN)';
+            descText = descText.slice(0, MAX_DESC) + `\n\n${tr('feedbackTrimmedNote') || defaults.feedbackTrimmedNote}`;
         }
         return descText;
     }
@@ -129,25 +171,25 @@ document.addEventListener('DOMContentLoaded', () => {
         statusEl.textContent = '';
         [title, desc, sevEl].forEach(clearError);
         if (document.getElementById('website_hp').value) {
-            statusEl.textContent = 'Phát hiện bot.';
+            statusEl.textContent = tr('feedbackBotDetected');
             return;
         }
         if (!validate()) {
-            statusEl.textContent = 'Vui lòng kiểm tra lại các trường được đánh dấu.';
+            statusEl.textContent = tr('feedbackValidationError');
             const firstInvalid = form.querySelector('.ip.error');
             if (firstInvalid) firstInvalid.focus();
             return;
         }
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Đang chuẩn bị email...';
+        submitBtn.textContent = tr('feedbackSubmitting');
         try {
             openMailClient();
-            statusEl.textContent = 'Đã mở ứng dụng email của bạn. Vui lòng kiểm tra và nhấn Gửi trong email ✉️';
+            statusEl.textContent = tr('feedbackSubmitSuccess');
         } catch (err) {
-            statusEl.textContent = 'Không mở được ứng dụng email. Vui lòng gửi email tới ' + SUPPORT_EMAIL;
+            statusEl.textContent = tr('feedbackSubmitFailure');
         } finally {
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Gửi phản hồi';
+            submitBtn.textContent = tr('feedbackSubmitLabel');
         }
     });
 });
