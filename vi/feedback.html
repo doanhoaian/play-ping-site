@@ -1,19 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Feedback &amp; Bug reports</title>
-    <meta name="description" content="Submit feedback, bug reports, or feature requests for PlayPing." />
-    <link rel="canonical" href="https://playping.dihaver.tech/feedback.html" />
+    <title>Góp ý &amp; Báo lỗi</title>
+    <meta name="description" content="Gửi góp ý, báo lỗi hoặc yêu cầu tính năng cho PlayPing." />
+    <link rel="canonical" href="https://playping.dihaver.tech/vi/feedback.html" />
     <link rel="alternate" hreflang="en" href="https://playping.dihaver.tech/feedback.html" />
     <link rel="alternate" hreflang="vi" href="https://playping.dihaver.tech/vi/feedback.html" />
     <link rel="alternate" hreflang="x-default" href="https://playping.dihaver.tech/feedback.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://playping.dihaver.tech/feedback.html" />
+    <meta property="og:url" content="https://playping.dihaver.tech/vi/feedback.html" />
     <meta property="og:title" content="Feedback — PlayPing" />
-    <meta property="og:description" content="Send feedback, bug reports, or feature requests for PlayPing." />
+    <meta property="og:description" content="Gửi góp ý, báo lỗi hoặc yêu cầu tính năng cho PlayPing." />
     <meta property="og:image" content="https://playping.dihaver.tech/images/og-cover.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="alternate"
@@ -33,7 +33,7 @@
     <header class="fixed top-0 inset-x-0 z-50">
         <div class="w-full backdrop-blur bg-zinc-950/80 border-b border-zinc-800">
             <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-                <a href="/" class="flex items-center gap-3">
+                <a href="/vi/" class="flex items-center gap-3">
                     <img src="/icons/android-chrome-192x192.png" alt="PlayPing icon"
                         class="w-8 h-8 rounded-xl border border-zinc-800" />
                     <span class="font-semibold tracking-tight text-zinc-100">PlayPing</span>
@@ -41,12 +41,12 @@
                 <div class="flex items-center gap-3">
                     <a href="https://play.google.com/store/apps/details?id=vn.dihaver.playping" target="_blank"
                         rel="noopener">
-                        <img class="h-10" alt="Get it on Google Play"
-                            src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" />
+                        <img class="h-10" alt="Tải xuống trên Google Play"
+                            src="https://play.google.com/intl/vi/badges/static/images/badges/vi_badge_web_generic.png" />
                     </a>
-                    <a href="/vi/feedback.html"
+                    <a href="/feedback.html"
                         class="text-sm px-3 py-1.5 rounded-full border border-zinc-800 hover:bg-zinc-900 transition">
-                        Tiếng Việt
+                        English
                     </a>
                 </div>
             </div>
@@ -54,44 +54,44 @@
     </header>
 
     <main class="mx-auto max-w-3xl px-4 pt-32 pb-20">
-        <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">Feedback &amp; Bug reports</h1>
-        <p class="opacity-70 mt-3">Tell us what you found or need. We read every message ❤️</p>
+        <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">Góp ý &amp; Báo lỗi</h1>
+        <p class="opacity-70 mt-3">Hãy mô tả vấn đề hoặc ý tưởng của bạn. Chúng tôi đọc hết mọi phản hồi ❤️</p>
 
         <section class="prose prose-invert max-w-none mt-8">
             <form id="fbForm" class="space-y-6 mt-4" novalidate>
                 <div class="grid md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block mb-2">Type *</label>
+                        <label class="block mb-2">Loại phản hồi *</label>
                         <select id="type" class="ip ip-select" required>
-                            <option value="bug">Bug report</option>
-                            <option value="feature">Feature request</option>
-                            <option value="other">Other</option>
+                            <option value="bug">Báo lỗi</option>
+                            <option value="feature">Yêu cầu tính năng</option>
+                            <option value="other">Khác</option>
                         </select>
                     </div>
                     <div id="sevWrap">
-                        <label class="block mb-2">Severity (for bugs)</label>
+                        <label class="block mb-2">Mức độ (khi là lỗi)</label>
                         <select id="severity" class="ip ip-select">
                             <option value="">—</option>
-                            <option value="low">Low</option>
-                            <option value="medium">Medium</option>
-                            <option value="high">High</option>
+                            <option value="low">Thấp</option>
+                            <option value="medium">Trung bình</option>
+                            <option value="high">Cao</option>
                         </select>
                         <p id="severityError" class="err-msg"></p>
                     </div>
                 </div>
 
                 <div>
-                    <label class="block mb-2">Title *</label>
-                    <input id="title" class="ip" placeholder="e.g. VPN simulation will not start" required minlength="4"
+                    <label class="block mb-2">Tiêu đề *</label>
+                    <input id="title" class="ip" placeholder="VD: Không bật được VPN" required minlength="4"
                         maxlength="200" />
                     <p id="titleCounter" class="counter">0 / 200</p>
                     <p id="titleError" class="err-msg"></p>
                 </div>
 
                 <div>
-                    <label class="block mb-2">Detailed description *</label>
+                    <label class="block mb-2">Mô tả chi tiết *</label>
                     <textarea id="description" class="ip" rows="6" required minlength="10" maxlength="2000"
-                        placeholder="Share reproduction steps, error messages, expected behaviour, etc."></textarea>
+                        placeholder="Mô tả bước tái hiện, thông báo lỗi, kỳ vọng..."></textarea>
                     <p id="descCounter" class="counter">0 / 2000</p>
                     <p id="descriptionError" class="err-msg"></p>
                 </div>
@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="flex items-center gap-3 pt-2">
-                    <button id="submitBtn" type="submit" class="btn btn-primary flex-shrink-0">Send feedback</button>
+                    <button id="submitBtn" type="submit" class="btn btn-primary flex-shrink-0">Gửi phản hồi</button>
                     <span id="status" class="text-sm opacity-80"></span>
                 </div>
             </form>
@@ -113,11 +113,11 @@
         <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
             <p class="text-sm opacity-70">© <span id="y"></span> Dihaver Tech — PlayPing</p>
             <div class="text-sm opacity-70 flex items-center gap-3">
-                <a href="/privacy.html" class="hover:opacity-100">Privacy</a>
+                <a href="/vi/privacy.html" class="hover:opacity-100">Quyền riêng tư</a>
                 <span>·</span>
-                <a href="/terms.html" class="hover:opacity-100">Terms</a>
+                <a href="/vi/terms.html" class="hover:opacity-100">Điều khoản</a>
                 <span>·</span>
-                <a href="mailto:dihaver.studio@gmail.com" class="hover:opacity-100">Contact</a>
+                <a href="mailto:dihaver.studio@gmail.com" class="hover:opacity-100">Liên hệ</a>
             </div>
         </div>
     </footer>

@@ -1,5 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     const SUPPORT_EMAIL = 'dihaver.studio@gmail.com';
+    const isVi = document.documentElement.lang && document.documentElement.lang.startsWith('vi');
+    const t = {
+        required: isVi ? 'Trường này là bắt buộc.' : 'This field is required.',
+        min: n => isVi ? `Cần ít nhất ${n} ký tự.` : `Need at least ${n} characters.`,
+        max: n => isVi ? `Tối đa ${n} ký tự.` : `Maximum ${n} characters.`,
+        invalid: isVi ? 'Giá trị không hợp lệ.' : 'Invalid value.',
+        severity: isVi ? 'Vui lòng chọn mức độ lỗi.' : 'Please select the bug severity.',
+        bot: isVi ? 'Phát hiện bot.' : 'Bot detected.',
+        check: isVi ? 'Vui lòng kiểm tra lại các trường được đánh dấu.' : 'Please review the highlighted fields.',
+        preparing: isVi ? 'Đang chuẩn bị email...' : 'Preparing email...',
+        opened: isVi ? 'Đã mở ứng dụng email của bạn. Vui lòng kiểm tra và nhấn Gửi trong email ✉️' : 'Your email app should be open. Review and press Send ✉️',
+        failOpen: isVi ? 'Không mở được ứng dụng email. Vui lòng gửi email tới ' : 'Could not open your email app. Please email ',
+        send: isVi ? 'Gửi phản hồi' : 'Send feedback',
+        truncated: isVi ? '\n\n(ĐÃ RÚT GỌN)' : '\n\n(TRUNCATED)'
+    };
     const form = document.getElementById('fbForm');
     const submitBtn = document.getElementById('submitBtn');
     const statusEl = document.getElementById('status');
@@ -25,10 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     function messageFor(el) {
         const v = el.validity;
-        if (v.valueMissing) return 'Trường này là bắt buộc.';
-        if (v.tooShort) return `Cần ít nhất ${el.minLength} ký tự.`;
-        if (v.tooLong) return `Tối đa ${el.maxLength} ký tự.`;
-        return 'Giá trị không hợp lệ.';
+        if (v.valueMissing) return t.required;
+        if (v.tooShort) return t.min(el.minLength);
+        if (v.tooLong) return t.max(el.maxLength);
+        return t.invalid;
     }
     function minFail(el) {
         const min = el.minLength > 0 ? el.minLength : 0;
@@ -67,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         el.addEventListener('change', () => clearError(el));
         el.addEventListener('blur', () => {
             if (el === title || el === desc) {
-                if (minFail(el)) setError(el, `Cần ít nhất ${el.minLength} ký tự.`);
+                if (minFail(el)) setError(el, t.min(el.minLength));
                 else clearError(el);
             } else if (!el.checkValidity()) {
                 setError(el, messageFor(el));
@@ -81,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!el) return;
             if (el === title || el === desc) {
                 if (minFail(el)) {
-                    setError(el, `Cần ít nhất ${el.minLength} ký tự.`);
+                    setError(el, t.min(el.minLength));
                     ok = false;
                     return;
                 }
@@ -92,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         if (typeEl.value === 'bug' && !sevEl.value) {
-            setError(sevEl, 'Vui lòng chọn mức độ lỗi.');
+            setError(sevEl, t.severity);
             ok = false;
         }
         return ok;
@@ -112,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const MAX_DESC = 1500;
         let descText = sanitizeLine(desc.value);
         if (descText.length > MAX_DESC) {
-            descText = descText.slice(0, MAX_DESC) + '\n\n(ĐÃ RÚT GỌN)';
+            descText = descText.slice(0, MAX_DESC) + t.truncated;
         }
         return descText;
     }
@@ -129,25 +144,25 @@ document.addEventListener('DOMContentLoaded', () => {
         statusEl.textContent = '';
         [title, desc, sevEl].forEach(clearError);
         if (document.getElementById('website_hp').value) {
-            statusEl.textContent = 'Phát hiện bot.';
+            statusEl.textContent = t.bot;
             return;
         }
         if (!validate()) {
-            statusEl.textContent = 'Vui lòng kiểm tra lại các trường được đánh dấu.';
+            statusEl.textContent = t.check;
             const firstInvalid = form.querySelector('.ip.error');
             if (firstInvalid) firstInvalid.focus();
             return;
         }
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Đang chuẩn bị email...';
+        submitBtn.textContent = t.preparing;
         try {
             openMailClient();
-            statusEl.textContent = 'Đã mở ứng dụng email của bạn. Vui lòng kiểm tra và nhấn Gửi trong email ✉️';
+            statusEl.textContent = t.opened;
         } catch (err) {
-            statusEl.textContent = 'Không mở được ứng dụng email. Vui lòng gửi email tới ' + SUPPORT_EMAIL;
+            statusEl.textContent = t.failOpen + SUPPORT_EMAIL;
         } finally {
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Gửi phản hồi';
+            submitBtn.textContent = t.send;
         }
     });
 });

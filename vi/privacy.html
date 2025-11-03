@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <title>Chính sách Quyền riêng tư</title>
+    <meta name="description"
+        content="PlayPing không thu thập dữ liệu cá nhân nhận dạng. Ứng dụng dùng Android VpnService để mô phỏng mạng và xử lý dữ liệu kỹ thuật phục vụ vận hành." />
+
+    <link rel="canonical" href="https://playping.dihaver.tech/vi/privacy.html" />
+    <link rel="alternate" hreflang="en" href="https://playping.dihaver.tech/privacy.html" />
+    <link rel="alternate" hreflang="vi" href="https://playping.dihaver.tech/vi/privacy.html" />
+    <link rel="alternate" hreflang="x-default" href="https://playping.dihaver.tech/privacy.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://playping.dihaver.tech/vi/privacy.html" />
+    <meta property="og:title" content="Privacy Policy – PlayPing" />
+    <meta property="og:description"
+        content="PlayPing không thu thập dữ liệu cá nhân nhận dạng; dùng Android VpnService để mô phỏng mạng. Firebase và backend chỉ xử lý dữ liệu kỹ thuật." />
+    <meta property="og:image" content="https://playping.dihaver.tech/images/og-cover.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="alternate"
+        href="android-app://vn.dihaver.playping/https/play.google.com/store/apps/details?id=vn.dihaver.playping" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="icon" href="/icons/favicon.ico" />
+    <meta name="theme-color" content="#0b0b0b">
+    <meta name="color-scheme" content="dark">
+</head>
+
+<body class="bg-black text-zinc-50">
+    <!-- Header -->
+    <header class="fixed top-0 inset-x-0 z-50">
+        <div class="w-full backdrop-blur bg-zinc-950/80 border-b border-zinc-800">
+            <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+                <a href="/vi/" class="flex items-center gap-3">
+                    <img src="/icons/android-chrome-192x192.png" alt="PlayPing icon"
+                        class="w-8 h-8 rounded-xl border border-zinc-800" />
+                    <span class="font-semibold tracking-tight text-zinc-100">PlayPing</span>
+                </a>
+                <div class="flex items-center gap-3">
+                    <a href="https://play.google.com/store/apps/details?id=vn.dihaver.playping" target="_blank"
+                        rel="noopener">
+                        <img class="h-10" alt="Tải xuống trên Google Play"
+                            src="https://play.google.com/intl/vi/badges/static/images/badges/vi_badge_web_generic.png" />
+                    </a>
+                    <a href="/privacy.html"
+                        class="text-sm px-3 py-1.5 rounded-full border border-zinc-800 hover:bg-zinc-900 transition">
+                        English
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="mx-auto max-w-3xl px-4 pt-32 pb-16">
+        <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">Chính sách Quyền riêng tư</h1>
+        <p class="opacity-70 mt-3">Cập nhật lần cuối:
+            <time datetime="2025-09-28">28/09/2025</time>
+        </p>
+
+        <section class="prose prose-invert max-w-none mt-8">
+            <div class="rounded-xl border border-zinc-800/80 bg-zinc-950/60 p-4">
+                <h3 class="m-0 text-lg font-semibold">Tóm tắt nhanh</h3>
+                <ul class="mt-3">
+                    <li><strong>Không thu thập dữ liệu cá nhân nhận dạng (PII).</strong> Không yêu cầu tài khoản.</li>
+                    <li>Sử dụng <code>Android VpnService</code> để mô phỏng mạng; xử lý chủ yếu <strong>cục bộ trên thiết bị</strong>.</li>
+                    <li>Có thể định tuyến tạm thời qua máy chủ trung gian để duy trì kết nối; <strong>không ghi log nội dung</strong>.</li>
+                    <li>Dùng <strong>Firebase</strong> và <strong>backend của PlayPing</strong> cho chẩn đoán kỹ thuật/đẩy thông báo.</li>
+                    <li>Chỉ phát hành trên <strong>Android</strong>; hiện không phân phối ở <strong>EU</strong> và <strong>Hoa Kỳ</strong>.</li>
+                </ul>
+            </div>
+
+            <h2>1. Giới thiệu &amp; phạm vi</h2>
+            <p>
+                <strong>PlayPing</strong> (Dihaver Tech) cho phép mô phỏng sự cố mạng (mất gói, tăng độ trễ, giới hạn băng thông, ngắt kết nối) để kiểm thử/huấn luyện trong môi trường an toàn trên thiết bị Android. Chính sách này áp dụng cho tất cả người dùng PlayPing trên Android và hiện không áp dụng tại các khu vực ứng dụng chưa phát hành (Liên minh Châu Âu và Hoa Kỳ).
+            </p>
+
+            <h2>2. Dữ liệu chúng tôi xử lý</h2>
+            <p><strong>Không thu thập dữ liệu cá nhân nhận dạng (PII) và không yêu cầu tài khoản.</strong></p>
+            <p>
+                Để vận hành ổn định, chúng tôi có thể xử lý <em>dữ liệu kỹ thuật ẩn danh</em> như: thông tin lỗi/crash, hiệu năng, loại thiết bị, phiên bản Android, trạng thái nhận thông báo. Các dữ liệu này chỉ phục vụ chẩn đoán và cải thiện chất lượng, <strong>không nhằm nhận dạng cá nhân</strong> và không dùng cho quảng cáo hành vi.
+            </p>
+
+            <h2>3. Mục đích sử dụng dữ liệu</h2>
+            <ul>
+                <li>Duy trì tính ổn định, khắc phục sự cố và cải thiện hiệu năng.</li>
+                <li>Gửi thông báo liên quan đến cập nhật/tính năng (khi bạn cho phép).</li>
+                <li>Phân tích xu hướng kỹ thuật để tối ưu trải nghiệm.</li>
+            </ul>
+
+            <h2>4. Cách thức hoạt động của VPN mô phỏng</h2>
+            <p>
+                PlayPing tận dụng <code>Android VpnService</code> để tạo kết nối mô phỏng và áp dụng điều kiện mạng giả lập.
+            </p>
+            <ul>
+                <li>Kết nối VPN chỉ phục vụ mục đích mô phỏng.</li>
+                <li>Ứng dụng <strong>không giám sát</strong> hoạt động duyệt web và <strong>không thu thập nội dung lưu lượng</strong>.</li>
+                <li>Xử lý được thực hiện cục bộ trên thiết bị. Trong một số trường hợp, khi VPN bật nhưng chưa áp dụng mô phỏng, lưu lượng có thể được <strong>định tuyến tạm thời qua máy chủ trung gian</strong> để tránh gián đoạn; máy chủ này không lưu trữ nội dung, không ghi nhật ký duyệt web, không phân tích dữ liệu.</li>
+            </ul>
+
+            <h2>5. Quyền ứng dụng</h2>
+            <p>PlayPing chỉ yêu cầu các quyền cần thiết để hoạt động minh bạch và hợp pháp:</p>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quyền</th>
+                            <th>Mục đích</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td>
+                            <td>Kết nối mạng, kiểm tra trạng thái mạng phục vụ mô phỏng/cập nhật.</td>
+                        </tr>
+                        <tr>
+                            <td><code>SYSTEM_ALERT_WINDOW</code></td>
+                            <td>Hiển thị cửa sổ nổi/phần tử giao diện phục vụ thao tác nhanh khi mô phỏng.</td>
+                        </tr>
+                        <tr>
+                            <td><code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_SPECIAL_USE</code>, <code>WAKE_LOCK</code></td>
+                            <td>Duy trì dịch vụ nền (ví dụ VPN mô phỏng) hoạt động ổn định, hạn chế bị hệ thống dừng.</td>
+                        </tr>
+                        <tr>
+                            <td><code>POST_NOTIFICATIONS</code>, <code>VIBRATE</code></td>
+                            <td>Gửi/hiển thị thông báo cập nhật hoặc trạng thái mô phỏng, rung phản hồi.</td>
+                        </tr>
+                        <tr>
+                            <td><code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code></td>
+                            <td>Giảm khả năng hệ thống giới hạn dịch vụ nền quan trọng (VPN mô phỏng).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="hint">PlayPing <strong>không</strong> truy cập nội dung tin nhắn, danh bạ, vị trí, micro hoặc camera.</p>
+
+            <h2>6. Máy chủ &amp; bên xử lý dữ liệu</h2>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dịch vụ</th>
+                            <th>Mục đích</th>
+                            <th>Vị trí</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Google Firebase</td>
+                            <td>Thông báo đẩy, báo cáo lỗi, phân tích giới hạn ở chỉ số kỹ thuật.</td>
+                            <td>Hạ tầng toàn cầu</td>
+                        </tr>
+                        <tr>
+                            <td>Máy chủ chuyển tiếp PlayPing</td>
+                            <td>Duy trì kết nối VPN khi mô phỏng tạm ngừng; không ghi log nội dung.</td>
+                            <td>Singapore &amp; Việt Nam</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>7. Thời gian lưu trữ dữ liệu</h2>
+            <p>Dữ liệu kỹ thuật chỉ được giữ lại trong thời gian cần thiết để xử lý sự cố hoặc cải thiện chất lượng sản phẩm, sau đó được xóa hoặc ẩn danh.</p>
+
+            <h2>8. Trẻ em</h2>
+            <p>PlayPing không dành cho trẻ em dưới 13 tuổi. Chúng tôi không cố ý thu thập thông tin từ trẻ em. Nếu bạn cho rằng trẻ em đã cung cấp dữ liệu, vui lòng liên hệ để được hỗ trợ xóa.</p>
+
+            <h2>9. Quyền lựa chọn của bạn</h2>
+            <ul>
+                <li>Bạn có thể tắt phân tích tùy chọn hoặc thông báo trong phần cài đặt của ứng dụng.</li>
+                <li>Bạn có thể yêu cầu xóa dữ liệu chẩn đoán gắn với thiết bị bằng cách email cho chúng tôi (vui lòng cung cấp log hoặc mã thiết bị để xác định dữ liệu).</li>
+            </ul>
+
+            <h2>10. Thay đổi chính sách</h2>
+            <p>Khi chính sách thay đổi, chúng tôi sẽ cập nhật ngày hiệu lực và đăng phiên bản mới tại đây. Việc tiếp tục sử dụng PlayPing đồng nghĩa bạn chấp nhận các thay đổi.</p>
+
+            <h2>11. Liên hệ</h2>
+            <p>Mọi câu hỏi liên quan đến quyền riêng tư hoặc dữ liệu, vui lòng liên hệ:</p>
+            <p>📩 <a href="mailto:dihaver.studio@gmail.com">dihaver.studio@gmail.com</a></p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-zinc-800">
+        <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm opacity-70">© <span id="y"></span> Dihaver Tech — PlayPing</p>
+            <div class="text-sm opacity-70 flex items-center gap-3">
+                <a href="/vi/privacy.html" class="hover:opacity-100">Quyền riêng tư</a>
+                <span>·</span>
+                <a href="/vi/terms.html" class="hover:opacity-100">Điều khoản</a>
+                <span>·</span>
+                <a href="mailto:dihaver.studio@gmail.com" class="hover:opacity-100">Liên hệ</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const yEl = document.getElementById('y');
+        if (yEl) yEl.textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
