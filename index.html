@@ -1,191 +1,44 @@
 <!doctype html>
 <html lang="vi">
-
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-
+    <meta name="robots" content="noindex" />
     <title>PlayPing</title>
-    <meta name="description"
-        content="PlayPing giúp bạn mô phỏng các sự cố mạng (mất gói, delay, giới hạn băng thông, đứt kết nối) để kiểm thử và huấn luyện ngay trên Android." />
-
-    <link rel="canonical" href="https://playping.dihaver.tech/" />
-    <meta property="og:type" content="website" />
-    <meta name="description"
-        content="PlayPing giúp bạn mô phỏng mất gói, delay, giới hạn băng thông, đứt kết nối để kiểm thử và huấn luyện app/game Android." />
-    <meta property="og:title" content="PlayPing - Mô phỏng sự cố mạng Android" />
-    <meta property="og:url" content="https://playping.dihaver.tech/" />
-    <meta property="og:image" content="https://playping.dihaver.tech/images/og-cover.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <link rel="alternate"
-        href="android-app://vn.dihaver.playping/https/play.google.com/store/apps/details?id=vn.dihaver.playping" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <link rel="manifest" href="/manifest.webmanifest" />
-    <link rel="icon" href="/icons/favicon.ico" />
-
-    <meta name="theme-color" content="#0b0b0b">
-    <meta name="color-scheme" content="dark">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "PlayPing",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "Android",
-    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "VND"},
-    "publisher": {"@type": "Organization", "name": "Dihaver Tech"},
-    "url": "https://play.google.com/store/apps/details?id=vn.dihaver.playping",
-    "image": "/images/og-cover.jpg",
-    "description": "PlayPing giúp bạn mô phỏng các sự cố mạng (mất gói, delay, giới hạn băng thông, đứt kết nối) để kiểm thử và huấn luyện ngay trên Android."
-  }
-  </script>
+    <script>
+        (function redirectByLocale() {
+            const SUPPORTED = ['vi', 'en'];
+            const FALLBACK = 'vi';
+            const slug = '';
+            const segments = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
+            if (segments.length && SUPPORTED.includes(segments[0])) {
+                return;
+            }
+            const browserLocales = (navigator.languages && navigator.languages.length)
+                ? navigator.languages
+                : [navigator.language];
+            let target = FALLBACK;
+            for (const lang of browserLocales) {
+                if (!lang) continue;
+                const normalized = lang.toLowerCase();
+                const match = SUPPORTED.find(locale => normalized.startsWith(locale));
+                if (match) {
+                    target = match;
+                    break;
+                }
+            }
+            const base = `/${target}/`;
+            const destination = base + slug;
+            const finalUrl = destination + window.location.search + window.location.hash;
+            if (window.location.pathname + (window.location.pathname.endsWith('/') ? '' : '/') === base) {
+                return;
+            }
+            window.location.replace(finalUrl);
+        })();
+    </script>
 </head>
-
-<body class="bg-black text-zinc-50">
-    <!-- Header -->
-    <header class="fixed top-0 inset-x-0 z-50">
-        <div class="w-full backdrop-blur bg-zinc-950/80 border-b border-zinc-800">
-            <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-                <a href="/" class="flex items-center gap-3">
-                    <img src="/icons/android-chrome-192x192.png" alt="PlayPing icon"
-                        class="w-8 h-8 rounded-xl border border-zinc-800" />
-                    <span class="font-semibold tracking-tight text-zinc-100">PlayPing</span>
-                </a>
-
-                <a href="https://play.google.com/store/apps/details?id=vn.dihaver.playping" target="_blank"
-                    rel="noopener">
-                    <img class="h-10" alt="Tải xuống trên Google Play"
-                        src="https://play.google.com/intl/vi/badges/static/images/badges/vi_badge_web_generic.png" />
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero -->
-    <section id="home" class="pt-32 pb-16 hero-gradient">
-        <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-8 items-center">
-            <div class="fade-up">
-                <h1 class="text-4xl md:text-5xl font-semibold leading-tight tracking-tight">Mô phỏng mạng <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-pink-500">ngay trên
-                        Android</span></h1>
-                <p class="mt-4 text-lg md:text-xl opacity-80">Giả lập mất gói, tăng độ trễ, giới hạn băng thông hay ngắt
-                    kết nối – giúp bạn kiểm thử ứng dụng, game và luyện tập trong điều kiện mạng thực tế.</p>
-                <div class="mt-6 flex items-center gap-4">
-                    <a href="https://play.google.com/store/apps/details?id=vn.dihaver.playping" target="_blank"
-                        rel="noopener" class="inline-block hover:opacity-90 active:opacity-80 transition">
-                        <img class="h-16" alt="Tải xuống trên Google Play"
-                            src="https://play.google.com/intl/vi/badges/static/images/badges/vi_badge_web_generic.png" />
-                    </a>
-                    <a href="#features"
-                        class="px-5 py-3 rounded-2xl border border-zinc-800 hover:bg-zinc-900 active:bg-zinc-800 transition">
-                        Khám phá tính năng
-                    </a>
-                </div>
-            </div>
-            <div class="fade-up md:justify-self-end">
-                <div class="stage">
-                    <div class="phone3d">
-                        <div class="face front">
-                            <div class="notch"></div>
-                            <img class="screen" src="images/screenshot-0.jpg" alt="PlayPing screenshot">
-                        </div>
-                        <div class="face back"></div>
-                        <div class="face right"></div>
-                        <div class="face left"></div>
-                        <div class="face top"></div>
-                        <div class="face bottom"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features -->
-    <section id="features" class="py-20">
-        <div class="mx-auto max-w-6xl px-4">
-            <div class="fade-up text-center">
-                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Tính năng nổi bật</h2>
-                <p class="mt-3 opacity-70">
-                    Trải nghiệm mô phỏng mạng dễ dàng, trực quan và an toàn.
-                </p>
-            </div>
-            <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="fade-up p-6 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition">
-                    <h3 class="font-semibold">Bong bóng nổi</h3>
-                    <p class="opacity-70 mt-2 text-sm">
-                        Điều khiển nhanh mọi chức năng mô phỏng ngay trên màn hình với bong bóng nổi tiện lợi.
-                    </p>
-                </div>
-                <div class="fade-up p-6 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition">
-                    <h3 class="font-semibold">Mô phỏng thực tế</h3>
-                    <p class="opacity-70 mt-2 text-sm">
-                        Tái tạo các tình huống mạng thường gặp: lag, giật, mất kết nối để kiểm thử ứng dụng và game.
-                    </p>
-                </div>
-                <div class="fade-up p-6 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition">
-                    <h3 class="font-semibold">Tùy chỉnh nâng cao</h3>
-                    <p class="opacity-70 mt-2 text-sm">
-                        Tự do cấu hình delay, jitter, loss, băng thông... phù hợp kịch bản kiểm thử của bạn.
-                    </p>
-                </div>
-                <div class="fade-up p-6 rounded-3xl border border-zinc-800 hover:border-zinc-600 transition">
-                    <h3 class="font-semibold">An toàn &amp; bảo mật</h3>
-                    <p class="opacity-70 mt-2 text-sm">
-                        Không thu thập dữ liệu cá nhân. Toàn bộ mô phỏng chạy cục bộ qua VPN an toàn.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Screens -->
-    <section id="screens" class="py-14 bg-black">
-        <div class="mx-auto max-w-6xl px-4">
-            <div class="fade-up text-center">
-                <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Ảnh màn hình</h2>
-                <p class="mt-2 opacity-70">Một số giao diện chính của PlayPing.</p>
-            </div>
-            <div class="mt-8 overflow-x-auto scrollbar-hide -mb-4 pb-4" style="-webkit-overflow-scrolling: touch;">
-                <div class="flex gap-4">
-                    <img class="flex-none h-96 rounded-2xl border border-zinc-800" src="/images/screenshot-1.png"
-                        alt="Screenshot 1" />
-                    <img class="flex-none h-96 rounded-2xl border border-zinc-800" src="/images/screenshot-2.png"
-                        alt="Screenshot 2" />
-                    <img class="flex-none h-96 rounded-2xl border border-zinc-800" src="/images/screenshot-3.png"
-                        alt="Screenshot 3" />
-                    <img class="flex-none h-96 rounded-2xl border border-zinc-800" src="/images/screenshot-4.png"
-                        alt="Screenshot 4" />
-                    <img class="flex-none h-96 rounded-2xl border border-zinc-800" src="/images/screenshot-5.png"
-                        alt="Screenshot 5" />
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-10 border-t border-zinc-200 border-zinc-800">
-        <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p class="text-sm opacity-70">© <span id="y"></span> Dihaver Tech — PlayPing</p>
-            <div class="text-sm opacity-70 flex items-center gap-3">
-                <a href="/privacy.html" class="hover:opacity-100">Privacy</a>
-                <span>·</span>
-                <a href="/terms.html" class="hover:opacity-100">Terms</a>
-                <span>·</span>
-                <a href="mailto:dihaver.studio@gmail.com" class="hover:opacity-100">Liên hệ</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="/assets/app.js"></script>
+<body>
+    <noscript>
+        <p>PlayPing hỗ trợ nhiều ngôn ngữ. Vui lòng truy cập <a href="/vi/">phiên bản tiếng Việt</a> hoặc <a href="/en/">English version</a>.</p>
+    </noscript>
 </body>
-
 </html>

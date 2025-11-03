@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Góp ý & Báo lỗi</title>
+    <meta name="description" content="Gửi góp ý, báo lỗi hoặc yêu cầu tính năng cho PlayPing." />
+    <link rel="canonical" href="https://playping.dihaver.tech/en/feedback.html" />
+    <link rel="alternate" hreflang="vi" href="https://playping.dihaver.tech/vi/feedback.html" data-i18n-hreflang="vi" />
+    <link rel="alternate" hreflang="en" href="https://playping.dihaver.tech/en/feedback.html" data-i18n-hreflang="en" />
+    <link rel="alternate" hreflang="x-default" href="https://playping.dihaver.tech/feedback.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://playping.dihaver.tech/en/feedback.html" />
+    <meta property="og:title" content="Feedback — PlayPing" />
+    <meta property="og:description" content="Gửi góp ý, báo lỗi hoặc yêu cầu tính năng cho PlayPing." />
+    <meta property="og:image" content="https://playping.dihaver.tech/images/og-cover.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="alternate"
+        href="android-app://vn.dihaver.playping/https/play.google.com/store/apps/details?id=vn.dihaver.playping" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="stylesheet" href="/assets/app.css" />
+    <link rel="icon" href="/icons/favicon.ico" />
+    <meta name="theme-color" content="#0b0b0b">
+    <meta name="color-scheme" content="dark">
+</head>
+
+<body class="bg-black text-zinc-50" data-i18n-root data-i18n-page="feedback">
+    <header class="fixed top-0 inset-x-0 z-50">
+        <div class="w-full backdrop-blur bg-zinc-950/80 border-b border-zinc-800">
+            <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+                <a href="/en/" class="flex items-center gap-3" data-i18n-route="home">
+                    <img src="/icons/android-chrome-192x192.png" alt="PlayPing icon"
+                        class="w-8 h-8 rounded-xl border border-zinc-800" />
+                    <span class="font-semibold tracking-tight text-zinc-100" data-i18n="brandName">PlayPing</span>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=vn.dihaver.playping" target="_blank"
+                    rel="noopener">
+                    <img class="h-10" alt="Tải xuống trên Google Play"
+                        src="https://play.google.com/intl/vi/badges/static/images/badges/vi_badge_web_generic.png" data-i18n-alt="headerPlayBadgeAlt" data-i18n-src="headerPlayBadgeSrc" />
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-3xl px-4 pt-32 pb-20">
+        <h1 class="text-3xl md:text-4xl font-semibold tracking-tight" data-i18n="pageHeading">Góp ý &amp; Báo lỗi</h1>
+        <p class="opacity-70 mt-3" data-i18n="pageIntro">Hãy mô tả vấn đề hoặc ý tưởng của bạn. Chúng tôi đọc hết mọi phản hồi ❤️</p>
+
+        <section class="prose prose-invert max-w-none mt-8">
+            <form id="fbForm" class="space-y-6 mt-4" novalidate>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block mb-2" data-i18n="feedbackTypeLabel">Loại phản hồi *</label>
+                        <select id="type" class="ip ip-select" required>
+                            <option value="bug" data-i18n="feedbackTypeBug">Báo lỗi</option>
+                            <option value="feature" data-i18n="feedbackTypeFeature">Yêu cầu tính năng</option>
+                            <option value="other" data-i18n="feedbackTypeOther">Khác</option>
+                        </select>
+                    </div>
+                    <div id="sevWrap">
+                        <label class="block mb-2" data-i18n="feedbackSeverityLabel">Mức độ (khi là lỗi)</label>
+                        <select id="severity" class="ip ip-select">
+                            <option value="" data-i18n="feedbackSeverityPlaceholder">—</option>
+                            <option value="low" data-i18n="feedbackSeverityLow">Thấp</option>
+                            <option value="medium" data-i18n="feedbackSeverityMedium">Trung bình</option>
+                            <option value="high" data-i18n="feedbackSeverityHigh">Cao</option>
+                        </select>
+                        <p id="severityError" class="err-msg"></p>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block mb-2" data-i18n="feedbackTitleLabel">Tiêu đề *</label>
+                    <input id="title" class="ip" placeholder="VD: Không bật được VPN" data-i18n-placeholder="feedbackTitlePlaceholder" required minlength="4"
+                        maxlength="200" />
+                    <p id="titleCounter" class="counter">0 / 200</p>
+                    <p id="titleError" class="err-msg"></p>
+                </div>
+
+                <div>
+                    <label class="block mb-2" data-i18n="feedbackDescriptionLabel">Mô tả chi tiết *</label>
+                    <textarea id="description" class="ip" rows="6" required minlength="10" maxlength="2000"
+                        placeholder="Mô tả bước tái hiện, thông báo lỗi, kỳ vọng..." data-i18n-placeholder="feedbackDescriptionPlaceholder"></textarea>
+                    <p id="descCounter" class="counter">0 / 2000</p>
+                    <p id="descriptionError" class="err-msg"></p>
+                </div>
+
+                <div class="hp-wrap">
+                    <label data-i18n="feedbackHoneypotLabel">Website</label>
+                    <input id="website_hp" autocomplete="off" />
+                </div>
+
+                <div class="flex items-center gap-3 pt-2">
+                    <button id="submitBtn" type="submit" class="btn btn-primary flex-shrink-0" data-i18n="feedbackSubmitLabel">Gửi phản hồi</button>
+                    <span id="status" class="text-sm opacity-80" data-i18n="feedbackStatusIdle"></span>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="py-10 border-t border-zinc-800">
+        <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm opacity-70">© <span id="y"></span> Dihaver Tech — PlayPing</p>
+            <div class="text-sm opacity-70 flex items-center gap-3">
+                <a href="/en/privacy.html" class="hover:opacity-100" data-i18n="footerPrivacy" data-i18n-route="privacy">Chính sách bảo mật</a>
+                <span>·</span>
+                <a href="/en/terms.html" class="hover:opacity-100" data-i18n="footerTerms" data-i18n-route="terms">Điều khoản</a>
+                <span>·</span>
+                <a href="mailto:dihaver.studio@gmail.com" class="hover:opacity-100" data-i18n="footerContact">Liên hệ</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/app.js" defer></script>
+    <script src="/assets/feedback.js" defer></script>
+</body>
+
+</html>
