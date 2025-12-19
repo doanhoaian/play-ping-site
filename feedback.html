@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Góp ý & Báo lỗi</title>
-    <meta name="description" content="Gửi góp ý, báo lỗi hoặc yêu cầu tính năng cho PlayPing." />
+    <title>Feedback & Bug Reports</title>
+    <meta name="description" content="Send feedback, report bugs, or request new features for PlayPing." />
     <link rel="canonical" href="https://playping.dihaver.tech/feedback.html" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://playping.dihaver.tech/feedback.html" />
     <meta property="og:title" content="Feedback — PlayPing" />
-    <meta property="og:description" content="Gửi góp ý, báo lỗi hoặc yêu cầu tính năng cho PlayPing." />
+    <meta property="og:description" content="Send feedback, report bugs, or request new features for PlayPing." />
     <meta property="og:image" content="https://playping.dihaver.tech/images/og-cover.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="alternate"
@@ -37,63 +37,68 @@
                 </a>
                 <a href="https://play.google.com/store/apps/details?id=vn.dihaver.playping" target="_blank"
                     rel="noopener">
-                    <img class="h-10" alt="Tải xuống trên Google Play"
-                        src="https://play.google.com/intl/vi/badges/static/images/badges/vi_badge_web_generic.png" />
+                    <img class="h-12" alt="Get it on Google Play"
+                        src="https://play.google.com/intl/en/badges/static/images/badges/en_badge_web_generic.png" />
                 </a>
             </div>
         </div>
     </header>
 
     <main class="mx-auto max-w-3xl px-4 pt-32 pb-20">
-        <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">Góp ý & Báo lỗi</h1>
-        <p class="opacity-70 mt-3">Hãy mô tả vấn đề hoặc ý tưởng của bạn. Chúng tôi đọc hết mọi phản hồi ❤️</p>
+        <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">Feedback & Bug Reports</h1>
+        <p class="opacity-70 mt-3">
+            Describe your issue or share your ideas. We read every piece of feedback ❤️
+        </p>
 
         <section class="prose prose-invert max-w-none mt-8">
             <form id="fbForm" class="space-y-6 mt-4" novalidate>
                 <div class="grid md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block mb-2">Loại phản hồi *</label>
+                        <label class="block mb-2">Feedback type *</label>
                         <select id="type" class="ip ip-select" required>
-                            <option value="bug">Báo lỗi</option>
-                            <option value="feature">Yêu cầu tính năng</option>
-                            <option value="other">Khác</option>
+                            <option value="bug">Bug report</option>
+                            <option value="feature">Feature request</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
                     <div id="sevWrap">
-                        <label class="block mb-2">Mức độ (khi là lỗi)</label>
+                        <label class="block mb-2">Severity (for bugs)</label>
                         <select id="severity" class="ip ip-select">
                             <option value="">—</option>
-                            <option value="low">Thấp</option>
-                            <option value="medium">Trung bình</option>
-                            <option value="high">Cao</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
                         </select>
                         <p id="severityError" class="err-msg"></p>
                     </div>
                 </div>
 
                 <div>
-                    <label class="block mb-2">Tiêu đề *</label>
-                    <input id="title" class="ip" placeholder="VD: Không bật được VPN" required minlength="4"
+                    <label class="block mb-2">Title *</label>
+                    <input id="title" class="ip" placeholder="e.g. VPN cannot be enabled" required minlength="4"
                         maxlength="200" />
                     <p id="titleCounter" class="counter">0 / 200</p>
                     <p id="titleError" class="err-msg"></p>
                 </div>
 
                 <div>
-                    <label class="block mb-2">Mô tả chi tiết *</label>
+                    <label class="block mb-2">Detailed description *</label>
                     <textarea id="description" class="ip" rows="6" required minlength="10" maxlength="2000"
-                        placeholder="Mô tả bước tái hiện, thông báo lỗi, kỳ vọng..."></textarea>
+                        placeholder="Describe reproduction steps, error messages, expected behavior..."></textarea>
                     <p id="descCounter" class="counter">0 / 2000</p>
                     <p id="descriptionError" class="err-msg"></p>
                 </div>
 
+                <!-- Honeypot -->
                 <div class="hp-wrap">
                     <label>Website</label>
                     <input id="website_hp" autocomplete="off" />
                 </div>
 
                 <div class="flex items-center gap-3 pt-2">
-                    <button id="submitBtn" type="submit" class="btn btn-primary flex-shrink-0">Gửi phản hồi</button>
+                    <button id="submitBtn" type="submit" class="btn btn-primary flex-shrink-0">
+                        Send feedback
+                    </button>
                     <span id="status" class="text-sm opacity-80"></span>
                 </div>
             </form>
@@ -108,10 +113,15 @@
                 <span>·</span>
                 <a href="/terms.html" class="hover:opacity-100">Terms</a>
                 <span>·</span>
-                <a href="mailto:dihaver.studio@gmail.com" class="hover:opacity-100">Liên hệ</a>
+                <a href="mailto:dihaver.studio@gmail.com" class="hover:opacity-100">Contact</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        const yEl = document.getElementById('y');
+        if (yEl) yEl.textContent = new Date().getFullYear();
+    </script>
 
     <script src="/assets/app.js" defer></script>
     <script src="/assets/feedback.js" defer></script>
