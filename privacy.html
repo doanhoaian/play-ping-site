@@ -7,14 +7,14 @@
 
     <title>Privacy Policy – PlayPing</title>
     <meta name="description"
-        content="PlayPing does not require user accounts and primarily processes technical and anonymized data. Optional personal data such as email may be provided by users when submitting feedback." />
+        content="Privacy Policy for PlayPing Application. Learn how Dihaver Tech handles data, VpnService operations, and user privacy." />
 
     <link rel="canonical" href="https://playping.dihaver.tech/privacy.html" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://playping.dihaver.tech/privacy.html" />
     <meta property="og:title" content="Privacy Policy – PlayPing" />
     <meta property="og:description"
-        content="PlayPing processes technical and anonymized data to operate network simulation features and display ads. Optional personal data such as email may be provided for feedback." />
+        content="Privacy Policy for PlayPing Application. Learn how Dihaver Tech handles data, VpnService operations, and user privacy." />
     <meta property="og:image" content="https://playping.dihaver.tech/images/og-cover.png" />
     <meta name="twitter:card" content="summary_large_image" />
 
@@ -34,7 +34,6 @@
 
 <body class="bg-black text-zinc-50">
 
-    <!-- Header -->
     <header class="fixed top-0 inset-x-0 z-50">
         <div class="w-full backdrop-blur bg-zinc-950/80 border-b border-zinc-800">
             <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
@@ -52,207 +51,295 @@
         </div>
     </header>
 
-    <!-- Content -->
     <main class="mx-auto max-w-3xl px-4 pt-32 pb-16">
         <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">Privacy Policy</h1>
         <p class="opacity-70 mt-3">Last updated:
-            <time datetime="2025-12-20">December 20, 2025</time>
+            <time datetime="2025-12-28">December 28, 2025</time>
         </p>
 
         <section class="prose prose-invert max-w-none mt-8">
+            <p>
+                This Application Privacy Policy (“Policy”) outlines the information that Dihaver Tech (“Developer”, “We”,
+                “Us”, or “Our”) gathers, how we use that information, and the options you have to access, correct, or
+                delete such information when you use the PlayPing Android application (the “Application”).
+            </p>
+            <p class="text-sm opacity-80">
+                Capitalized terms used but not defined herein shall have the meanings ascribed to them in the applicable
+                Terms of Service.
+            </p>
 
-            <!-- Summary -->
-            <div class="rounded-xl border border-zinc-800/80 bg-zinc-950/60 p-4">
-                <h3 class="m-0 text-lg font-semibold">Quick Summary</h3>
-                <ul class="mt-3">
-                    <li>
-                        <strong>No user accounts required.</strong> PlayPing does not collect personal data by default.
-                        In certain cases, users may optionally provide an email address (for example, when submitting
-                        feedback).
-                    </li>
-                    <li>
-                        An <strong>anonymous identifier</strong> may be generated locally to support app functionality,
-                        analytics, and advertising.
-                    </li>
-                    <li>
-                        Uses <code>Android VpnService</code> to simulate network conditions, primarily processed
-                        <strong>on-device</strong>.
-                    </li>
-                    <li>
-                        Traffic may be temporarily routed through intermediary servers for connectivity purposes;
-                        <strong>no traffic content is logged</strong>.
-                    </li>
-                    <li>
-                        Uses <strong>Firebase</strong>, <strong>advertising partners</strong>, and PlayPing backend
-                        services for diagnostics and ads.
-                    </li>
-                </ul>
+            <h2>1. Scope of Policy</h2>
+            <p>
+                Our mission is to provide developers, testers,... with robust network testing tools while maintaining the
+                highest standards of data integrity and user privacy. To earn and maintain your trust, we commit to
+                communicating transparently regarding the technical operations of our network simulation features.
+            </p>
+            <p>
+                This Policy applies solely to the Developer’s collection, use, and disclosure of data in connection with
+                the use of the Application. This Policy does not apply to third-party websites, services, or
+                applications that you may access through the Application, which are governed by their own respective
+                privacy policies.
+            </p>
+
+            <h2>2. Information We Collect</h2>
+            <p>
+                We adhere to the principle of data minimization. We only collect and process the data strictly required
+                to operate the Application’s simulation features, ensure stability, and support the advertising model
+                that keeps the Application free.
+            </p>
+            <p>
+                There are three categories of data that we collect: Operational Data, Advertising Data, and Feedback Data.
+            </p>
+
+            <h3>2.1 Operational Data (Technical & Device)</h3>
+            <p>
+                When you use the Application, we automatically collect specific technical data required for the
+                Application to function on your specific hardware. This data is pseudonymized and generally cannot be
+                used to directly identify you as an individual.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="w-1/3">Information Type</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Device Attributes</strong></td>
+                        <td>We collect information regarding your device model, Android operating system version, screen
+                            resolution, and available storage. This is used for troubleshooting compatibility issues and
+                            optimizing the user interface.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>App Performance</strong></td>
+                        <td>We track Application launch times, hang rates, and energy usage to ensure the network
+                            simulation does not degrade device battery life disproportionately.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Crash Logs</strong></td>
+                        <td>In the event of an Application failure, we collect crash logs via Google Firebase
+                            Crashlytics. These logs contain stack traces and device state information at the time of the
+                            crash. They do not contain your IP address or personal user content.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Network State</strong></td>
+                        <td>We access the status of your network connection (Wi-Fi vs. Mobile Data) to verify if the
+                            simulation environment can be established.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>2.2 Advertising Data</h3>
+            <p>
+                To provide the Application free of charge, we monetize via Appodeal and its partner ad networks. These
+                partners may collect data to serve relevant advertisements.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="w-1/3">Information Type</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Advertising ID (GAID)</strong></td>
+                        <td>We and our partners use the Google Advertising ID (GAID) to manage ad frequency (capping),
+                            track ad conversions, and detect fraud. You can reset this ID in your Android device
+                            settings.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coarse Location</strong></td>
+                        <td>We may process approximate location data (derived from IP address) to serve regionally
+                            appropriate advertisements. We do not collect precise GPS coordinates.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>2.3 Feedback Data (Voluntary)</h3>
+            <p>
+                We do not require user account registration. However, if you choose to submit feedback or bug reports
+                via the Application:
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="w-1/3">Information Type</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Email Address</strong></td>
+                        <td>If provided, your email is used solely to reply to your inquiry. We do not add this email to
+                            marketing lists without your explicit consent.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>User Content</strong></td>
+                        <td>The text of your feedback and any screenshots you voluntarily attach.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>3. Network Simulation & VpnService Disclosure</h2>
+            <div class="rounded-xl border border-zinc-800/80 bg-zinc-950/60 p-4 mb-4">
+                <p class="mt-0 mb-2 font-semibold text-zinc-200">This section is critical for understanding how the Application functions regarding Android’s VpnService API.</p>
+                <p class="text-sm m-0">
+                    The Application utilizes the Android <code>VpnService</code> class to create a local, virtual network interface.
+                    This is the core mechanism allowing PlayPing to simulate network conditions (packet loss, high latency, disconnection) without requiring root access.
+                </p>
             </div>
-
-            <h2>1. Introduction & Scope</h2>
-            <p>
-                <strong>PlayPing</strong> (by Dihaver Tech) is an Android application that allows users to simulate
-                network conditions such as packet loss, latency, bandwidth limits, and disconnections for testing and
-                training purposes.
-                This Privacy Policy explains how information is processed when using the app.
-            </p>
-
-            <h2>2. Data We Process</h2>
-            <p>
-                PlayPing does not require registration and does not collect personal data by default.
-                However, to operate and improve the app, we may process:
-            </p>
-            <ul>
-                <li>An <strong>anonymous app-generated identifier</strong> (not linked to personal identity).</li>
+            
+            <ul class="mt-4">
                 <li>
-                    Technical data such as crash reports, performance metrics, device model, and Android version.
+                    <strong>Local Processing:</strong> The majority of traffic interception and manipulation occurs
+                    locally on your device. The Application acts as a "loopback" to delay or drop packets based on your
+                    configuration.
                 </li>
                 <li>
-                    Ad-related technical information required to display ads.
+                    <strong>No Content Inspection:</strong> The Application does not decrypt, read, store, or analyze
+                    the content (payload) of your network traffic (e.g., passwords, messages, emails).
                 </li>
                 <li>
-                    An <strong>optional email address</strong>, if the user chooses to provide it when submitting
-                    feedback.
+                    <strong>Connectivity Maintenance:</strong> In limited scenarios, to prevent total connectivity
+                    failure during complex simulations, traffic may be routed through intermediary relay servers. These
+                    servers function strictly as data conduits; they do not log traffic content.
+                </li>
+                <li>
+                    <strong>Not a VPN for Privacy:</strong> The Application is a developer tool for testing, not a
+                    consumer VPN designed for anonymity or bypassing geo-restrictions.
                 </li>
             </ul>
 
-            <h2>3. Purpose of Processing</h2>
+            <h2>4. How We Use Information We Collect</h2>
+            <p>We process the collected data for the following specific legal bases and purposes:</p>
             <ul>
-                <li>Ensuring stability, performance, and reliability of the app.</li>
-                <li>Displaying advertisements and managing ad frequency.</li>
-                <li>Responding to user feedback and support requests.</li>
+                <li><strong>Service Provision:</strong> To execute the network simulation logic and ensure the
+                    VpnService remains stable in the background.</li>
+                <li><strong>Debugging & Improvement:</strong> To analyze crash trends (e.g., specific crashes on Android
+                    14) and release stability patches.</li>
+                <li><strong>Monetization:</strong> To display advertisements via Appodeal, allowing us to maintain the
+                    Application infrastructure.</li>
+                <li><strong>Legal Compliance:</strong> To comply with legal obligations or valid law enforcement
+                    requests.</li>
             </ul>
 
-            <h2>4. Network Simulation & VPN Operation</h2>
+            <h2>5. Information Sharing</h2>
             <p>
-                PlayPing uses <code>Android VpnService</code> to create a simulated network environment.
+                We do not sell your personal information. We will not share or otherwise disclose your information
+                except as necessary to provide our services or as described below.
+            </p>
+
+            <h3>5.1 Service Providers</h3>
+            <p>
+                We work with third-party service providers who process data on our behalf. These providers are strictly
+                prohibited from using your data for any purpose other than providing the agreed services.
             </p>
             <ul>
-                <li>The VPN is used exclusively for simulation purposes.</li>
-                <li>The app does <strong>not monitor browsing activity</strong> or inspect traffic content.</li>
-                <li>
-                    In certain situations, traffic may be temporarily routed through an intermediary server to prevent
-                    connectivity loss. These servers do not store, log, or analyze traffic content.
-                </li>
+                <li><strong>Google Firebase (USA):</strong> Analytics and Crash Reporting.</li>
+                <li><strong>Appodeal (USA/Global):</strong> Ad mediation and delivery. Appodeal may share data with
+                    its demand partners (Ad Networks) to serve ads. Please refer to Appodeal’s Privacy Policy for
+                    details on their downstream partners.</li>
             </ul>
 
-            <h2>5. App Permissions</h2>
-            <p>PlayPing requests only permissions necessary for its functionality:</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Permission</th>
-                        <th>Purpose</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td>
-                        <td>Network connectivity and status checks.</td>
-                    </tr>
-                    <tr>
-                        <td><code>SYSTEM_ALERT_WINDOW</code></td>
-                        <td>Floating UI elements for quick simulation control.</td>
-                    </tr>
-                    <tr>
-                        <td><code>FOREGROUND_SERVICE</code>, <code>WAKE_LOCK</code></td>
-                        <td>Ensure stable background operation of simulation services.</td>
-                    </tr>
-                    <tr>
-                        <td><code>POST_NOTIFICATIONS</code>, <code>VIBRATE</code></td>
-                        <td>Status updates and user notifications.</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>6. Third-Party Services</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Service</th>
-                        <th>Purpose</th>
-                        <th>Data Type</th>
-                        <th>Notes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Firebase</strong></td>
-                        <td>Crash reporting and performance monitoring</td>
-                        <td>Technical and diagnostic data</td>
-                        <td>No direct personal identification</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Appodeal & Ad Networks</strong></td>
-                        <td>Ad delivery and monetization</td>
-                        <td>Advertising identifiers and technical data</td>
-                        <td>Used for ad serving and measurement</td>
-                    </tr>
-                    <tr>
-                        <td><strong>PlayPing Backend</strong></td>
-                        <td>Feedback handling and configuration updates</td>
-                        <td>Technical metadata and optional feedback data</td>
-                        <td>No traffic content logging</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <p>
-                Advertising is provided by Appodeal and its ad network partners.
-                You can learn more about Appodeal’s data practices at
-                <a href="https://appodeal.com/privacy-policy/" target="_blank" rel="noopener noreferrer">
-                    Appodeal’s Privacy Policy
-                </a>.
-            </p>
-
-            <h2>7. Data Sharing</h2>
-            <p>
-                We do not sell personal data. Technical and anonymous data may be shared with service providers and
-                advertising partners strictly for app operation and monetization purposes.
-            </p>
-
-            <h2>8. Data Security & Retention</h2>
+            <h3>5.2 Legal Requirements</h3>
+            <p>We may disclose information if required to do so by law or in the good-faith belief that such action is
+                necessary to:</p>
             <ul>
-                <li>Data is transmitted using secure, encrypted connections.</li>
-                <li>No network traffic content is stored or logged.</li>
-                <li>Anonymous identifiers are removed when app data is cleared or the app is uninstalled.</li>
+                <li>Comply with a legal obligation, court order, or government request (including compliance with
+                    Vietnam’s Cybersecurity Law).</li>
+                <li>Protect and defend the rights or property of Dihaver Tech.</li>
+                <li>Prevent or investigate possible wrongdoing in connection with the Application.</li>
             </ul>
 
-            <h2>9. User Rights</h2>
+            <h2>6. Data Retention</h2>
+            <p>We retain data only as long as necessary to fulfill the purposes outlined in this Policy.</p>
+            <ul>
+                <li><strong>Operational Data:</strong> Retained in aggregate form for up to 14 months (via Firebase
+                    retention standards).</li>
+                <li><strong>Feedback Data:</strong> Emails and support tickets are retained for 6 months after the case
+                    is closed, then deleted, unless required for legal records.</li>
+                <li><strong>Local App Data:</strong> All local settings and the generated anonymous app instance ID are
+                    deleted immediately upon uninstallation of the Application or clearing of app data.</li>
+            </ul>
+
+            <h2>7. International Data Transfers</h2>
             <p>
-                PlayPing does not create user accounts.
-                If a user has submitted feedback containing an email address, they may contact the developer to request
-                removal of that information.
+                The Application is operated globally. Your information, including Technical and Advertising Data, may be
+                transferred to—and maintained on—computers located outside of your state, province, country, or other
+                governmental jurisdiction where the data protection laws may differ from those from your jurisdiction.
+            </p>
+            <p>
+                If you are located in the European Economic Area (EEA) or Vietnam, please note that we transfer data to
+                the United States and other jurisdictions for processing by our Service Providers (Google, Appodeal). We
+                rely on Standard Contractual Clauses (SCCs) and data processing agreements to ensure your data remains
+                protected.
+            </p>
+
+            <h2>8. User Rights</h2>
+            <p>Depending on your jurisdiction (including users in the EEA, California, and Vietnam), you have specific
+                rights regarding your data:</p>
+            <ul>
+                <li><strong>Right to Access:</strong> You have the right to request copies of the personal data we hold
+                    about you.</li>
+                <li><strong>Right to Deletion:</strong> You may request that we delete your personal data (e.g., your
+                    support email).</li>
+                <li><strong>Right to Opt-Out:</strong> You may opt out of personalized advertising by adjusting the
+                    "Ads" settings on your Android device (Settings > Google > Ads > Delete advertising ID).</li>
+            </ul>
+            <p>
+                To exercise these rights, please contact us at <a
+                    href="mailto:dihaver.studio@gmail.com">dihaver.studio@gmail.com</a>. Please note that because we do
+                not maintain user accounts, we may not be able to identify your specific data without you providing the
+                specific Technical IDs associated with your device.
+            </p>
+
+            <h2>9. Security</h2>
+            <p>
+                We employ administrative, technical, and physical security measures to help protect your information.
+                These measures include:
+            </p>
+            <ul>
+                <li><strong>Encryption:</strong> Data transmitted between the Application and our servers (or
+                    third-party servers) is encrypted using TLS (Transport Layer Security).</li>
+                <li><strong>Access Control:</strong> Access to crash logs and feedback emails is restricted to
+                    authorized personnel of Dihaver Tech only.</li>
+            </ul>
+            <p>
+                However, please be aware that no electronic transmission over the Internet or information storage
+                technology can be guaranteed to be 100% secure.
             </p>
 
             <h2>10. Children’s Privacy</h2>
             <p>
-                PlayPing is not directed at children under 13 and does not knowingly collect data from children.
+                The Application is not directed to individuals under the age of 13 (or the equivalent minimum age in
+                your jurisdiction). We do not knowingly collect personal information from children. If we become aware
+                that we have collected personal data from a child without verification of parental consent, we take
+                steps to remove that information from our servers.
             </p>
 
-            <h2>11. Regional Compliance</h2>
+            <h2>11. Notification of Changes</h2>
             <p>
-                Where required by law, consent mechanisms may be presented in accordance with applicable regional
-                regulations.
+                We reserve the right to update or change our Policy at any time. If we make material changes to how we
+                treat our users' data, we will notify you by updating the date at the top of this Policy and, where
+                feasible, placing a prominent notice within the Application. Your continued use of the Application after
+                we post any modifications to the Policy will constitute your acknowledgment of the modifications and
+                your consent to abide by the modified Policy.
             </p>
 
-            <h2>12. Changes to This Policy</h2>
+            <h2>12. Contact Information</h2>
             <p>
-                We may update this Privacy Policy from time to time. Updates will be published on this page with a new
-                effective date.
+                If you have any questions about this Policy or our data practices, please contact us:
             </p>
-
-            <h2>13. Contact</h2>
             <p>
-                If you have questions regarding this Privacy Policy, please contact:
-                <br />
-                📩 <a href="mailto:dihaver.studio@gmail.com">dihaver.studio@gmail.com</a>
+                <strong>Dihaver Tech</strong><br>
+                Email: <a href="mailto:dihaver.studio@gmail.com">dihaver.studio@gmail.com</a>
             </p>
 
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="py-10 border-t border-zinc-800">
         <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
             <p class="text-sm opacity-70">© <span id="y"></span> Dihaver Tech — PlayPing</p>
